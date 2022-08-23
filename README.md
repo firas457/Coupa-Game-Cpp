@@ -1,98 +1,18 @@
-<div dir="rtl" lang="he">
+# Coupa Game
+## Coupa is a board game with 2-6 players playing against each other, the one who lasts to the end is the winner of the game,  each player draws a card from the pile. Each card describes a role that the player can fulfill. In the center of the table is a box of coins. Each player in turn according to the role he belongs to (the details of the roles below) can take coins accordingly. The goal is to carry out "coups" and remove other players from their positions. The last player left holding a role wins , Every player has their own name. In each round, a player can, regardless of his role, perform one of the following actions:. Salary - income - take a coin from the pile. This operation has no cost, no actions against it, and the player earns a single coin. Double salary - foreign_aid - take two coins from the pile. This operation has no cost, and it entitles the player to two coins. But there's a role in the game that can block this operation. If the player is blocked while trying to take double pay, his turn ends. Coup-coup-- to remove an opponent from his position and thus take him out of the game.. The cost of this operation is 7 coins, has no replay, and ends with the player to whom the action is being played is removed and finished. Each action must update the number of coins the player holds accordingly. If the operation is invalid, an appropriate exception must be thrown. In addition, the following methods must be implemented: Role - a function that returns the role of the player (see the list of roles below) for display. Coins the method returns how many coins the player has, Rules to play: <br/>
+#### Doakes - Duke: Can take a three-quarters-high tax from the register without any player being able to stop it. In addition, the Dox can block a double-wage operation. The blocked player returns the two coins to the cash register.
 
-# קו - שלב ב
+#### Assassin - assassin: The player can be removed from the position with only 3 coins (instead of 7). However, there is a role that can prevent this action from the assassin. If an assassin is blocked, the player who was voted out after the assassination returns to the game.
 
-קו (coup - הפיכה) הוא משחק קופסה עבור 2-6 שחקנים המשחקים אחד נגד השני כדי להישאר אחרונים על המגרש.
+#### Ambassador - Ambassador: A coin can be transferred from one player to another player, and the ambassador can prevent further theft.
 
-במטלה זו נממש חלק מחוקי המשחק.
+#### Captain - Captain: Could steal 2 coins from another player. This action can be blocked by an ambassador or another captain. (Captain can also block theft, like the ambassador).
 
-## חוקי המשחק
-בתחילת המשחק כל שחקן שולף קלף מהערימה. כל קלף מתאר  תפקיד אותו יכול לממש השחקן.  במרכז השולחן ישנה קופה של מטבעות. כל שחקן בתורו משחק לפי התפקיד אליו משתייך (פירוט התפקידים בהמשך) ויכול לקחת מטבעות בהתאם. מטרת המשחק היא להוציא לפועל "הפיכות" ולהדיח שחקנים אחרים מתפקידם. השחקן האחרון שנשאר בעל תפקיד מנצח.
- 
-## השחקן
-
-לכל שחקן יש שם משלו. 
-
-בכל תור יכול שחקן, בלי קשר לתפקידו, לבצע את אחת מהפעולות הבאות:
-
-1. שכר - `income` - לקחת מטבע מהערימה.  
-לפעולה זו אין עלות, אין פעולות נגדיות והשחקן מרוויח מטבע בודד.
-
-2. שכר כפול - `foreign_aid` - לקחת שני מטבעות מהערימה.  
-לפעולה זו אין עלות והיא מזכה את השחקן בשני מטבעות. אבל, ישנו תפקיד במשחק היכול לחסום את הפעולה הזו. אם השחקן נחסם בעת שמנסה לקחת שכר כפול, תורו מסתיים.
-
-3. הפיכה - `coup` -  להדיח שחקן יריב מתפקידו ובכך להוציא אותו מהמשחק.  
-עלות פעולה זו 7 מטבעות, אין לה פעולות נגדיות והיא מסתיימת בכך שהשחקן עליו הופעלה הפעולה מודח מתפקידו ומסיים את המשחק.
-
-כל פעולה צריכה לעדכן את מספר המטבעות אותם מחזיק השחקן בהתאם.  
-אם הפעולה לא חוקית, יש לזרוק חריגה מתאימה.
-
-בנוסף, יש לממש את השיטות הבאות:
-
-*  `role` - פונקציה המחזירה את התפקיד של השחקן (ראו רשימת התפקידים למטה), לצורך תצוגה.
-
-* `coins` השיטה מחזירה כמה מטבעות יש לשחקן
-
-
-## תפקידים
-
-ישנם תפקידים שונים של שחקנים, שיש להם כישורים מיוחדים:
-
-1. דוקס - `Duke`: יכול לקחת מס בגובה שלושה מטבעות מהקופה מבלי שאף שחקן יכול למנוע ממנו. בנוסף, הדוקס יכול לחסום פעולת שכר כפול. השחקן שנחסם מחזיר את שני המטבעות לקופה.
-
-2. מתנקש - `Assassin`: יכול להדיח שחקן מתפקידו בעלות 3 מטבעות בלבד (במקום 7). אולם, יש תפקיד היכול למנוע פעולה זו מהמתנקש. אם מתנקש נחסם השחקן שהודח בעקבות ההתנקשות חוזר למשחק.
-
-3. שגריר - `Ambassador`: יכול להעביר מטבע משחקן אחד לשחקן אחר בנוסף, השגריר יכול למנוע את פעולת הגניבה המפורטת בהמשך.
-
-4. קפטן - `Captain`: יכול לגנוב 2 מטבעות משחקן אחר. פעולה זו יכולה להיחסם ע"י שגריר או ע"י קפטן אחר. (ז"א גם קפטן יכול לחסום גניבה, בדומה לשגריר).
-
-5. רוזנת - `Contessa`: יכולה לחסום את פעולת ההתנקשות.
-
-הערות:
-
-* יכולים להיות שני שחקנים או יותר בעלי אותו תפקיד - לא קורה שום דבר מיוחד במצב זה.
-
-* אם שחקן מחזיק 10 מטבעות בתחילת תורו, הוא חייב לבצע הפיכה באותו תור
-
-* פעולות חסימה לא צריכות להמתין לתור השחקן החוסם ולא מבזבזות לו תור אלא מתבצעות "בזמן אמת". במשחק שלנו לא נממש תגובות "בזמן אמת" לכן ממשו את הפתרון הבא:  
-שחקן שביצע פעולה שניתנת לחסימה, ניתן לחסום את הפעולה שלו עד שהגיע תורו לשחק שוב.  
-דוגמה:  
-שחקן 1 לקח שכר כפול ושחקן 3 מחזיק בקלף דוקס. שחקן 3 לא צריך לחכות לתורו כדי לחסום את שחקן 1. אבל, אם הגיע שוב תורו של שחקן 1, שחקן 3 כבר לא יכול לבקש ממנו להחזיר את המטבעות לקופה.
-
-## מהלך המשחק
-
-לכל משחק יש את השחקנים שמשחקים בו, מה מצבו של כל שחקן ובסיום המשחק, מי המנצח. בנוסף, המשחק יודע תור מי עכשיו. התורות נקבעים לפי סדר ההצטרפות למשחק.
-
-יש לממש את השיטות
-
-1. תור - `turn` - הדפסת שם השחקן אשר תורו לשחק כעת.
-2. שחקנים פעילים - `players` - השיטה מחזירה את שמות השחקנים שפעילים כעת במשחק.
-3. מנצח - `winner` - השיטה מחזירה את שם המנצח. אם המשחק עדיין פעיל, השיטה תזרוק שגיאה.
-
-
-בשלב ב עליכם לכתוב מימוש מלא העובר את כל הבדיקות.
-כיתבו את כל הקבצים הדרושים כך שהפקודות הבאות יעבדו ללא שגיאות:
-
-<div dir='ltr'>
-
-	make test1 && ./test1
-	make test2 && ./test2
-	make test3 && ./test3
-	make tidy
-	make valgrind
-
-</div>
-
-אין לשנות קבצים קיימים אלא רק להוסיף קבצים חדשים.
-
-בנוסף, לצורך הצגה, יש לכתוב תוכנית ראשית יצירתית, המדגימה את כל הפעולות של הלוח והשחקנים השונים.
-
-יש לפתור את המטלה באופן עצמאי.
-
-* מותר להתייעץ עם סטודנטים אחרים או לחפש מידע באינטרנט;
-אסור להעתיק קטעי-קוד שלמים מסטודנטים אחרים או מהאינטרנט.
-* יש לדווח על כל עזרה שקיבלתם, מסטודנטים אחרים או מהאינטרנט, בהתאם ל[תקנון היושר של המחלקה](https://www.ariel.ac.il/wp/cs/wp-content/uploads/sites/88/2020/08/Guidelines-for-Academic-Integrity.pdf).
-
-
-בהצלחה
-</div>
+#### Countess - Contessa: Could block the assassination operation.
+#### Notes:
+#### There can be two or more players who have the same role - nothing special happens in this situation.
+#### If a player holds 10 coins at the beginning of his turn, he must perform a coup in that line
+#### Blocking operations should not wait for the blocking player's turn and do not waste an appointment but are performed "in real time." In our game, we will not #### #### exercise "real-time" responses, so we will come up with the following solution:
+#### A player who has performed a blocked action can be blocked until it is his turn to play again.
+#### Example:
+#### Player 1 took double pay and player 3 has the Doakes card. Player 3 doesn't have to wait his turn to block player 1, but if it's player 1 again, player 3 can't ask #### him to return the coins to the register.
